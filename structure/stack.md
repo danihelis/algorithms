@@ -2,9 +2,9 @@
 
 Stacks store data in a way that the first element inserted is the last one
 retrieved. They are the natural structures for nested elements. In this section,
-we implement stacks using fixed-sized vectors. We might as well use
-simple linked lists if the number of elements is unbounded, with insertion and
-removal always performed on the head node.  All operations run in $O(1)$.
+we implement stacks using fixed-size vectors. We might as well use simple linked
+lists if the number of elements is unbounded, with insertion and removal always
+performed on the head node.  All operations run in $O(1)$.
 
 ```c
 #include <assert.h>
