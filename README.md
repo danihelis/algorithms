@@ -1,9 +1,10 @@
 # Repository of algorithms
 
-A selection of classical algorithms written in ANSI C. They were written as a
-reference for my personal study of competitive programming problems.
+A selection of basic and classical algorithms written in ANSI C. They were
+written as a reference for my personal study while solving competitive
+programming problems.
 
 ### Data structures
 
-* [Vectors](struct/vector.md)
-* Linked lists
+* [Vectors](structure/vector.md)
+* [Linked lists](structure/linked-list.md)
