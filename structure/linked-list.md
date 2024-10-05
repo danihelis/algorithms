@@ -47,8 +47,7 @@ int is_empty(list_t *list) {
 ```
 
 
-Search
-------
+## Search
 
 Search for an element in the linked list.
 
