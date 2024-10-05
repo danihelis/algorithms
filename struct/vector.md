@@ -166,7 +166,7 @@ chosen. In the worst case, the algorithm runs in $O(n^2)$. Thus, it is
 recommended to use the sorting function available in the library of your
 programming language, since this drawback is likely to be corrected there.
 In ANSI C, this function is called
-    [qsort](http://www.cplusplus.com/reference/cstdlib/qsort/>).
+    [qsort](http://www.cplusplus.com/reference/cstdlib/qsort/).
 
 ```c
 #include <stdlib.h>
