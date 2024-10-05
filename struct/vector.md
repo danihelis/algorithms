@@ -21,23 +21,21 @@ Given a sorted vector and an element, find the index of the element inside the
 vector. If the element is not present, find an index where the element might
 be inserted while maintaining the vector sorted.
 
-**Input:** A sorted vector $V$ of length $n$, and an element $x$ \
-**Output:** The index $i$ such that $v_i = x$, if $x \in V$; otherwise,
+**Input** A sorted vector $V$ of length $n$, and an element $x$ \
+**Output** The index $i$ such that $v_i = x$, if $x \in V$; otherwise,
 an index $i$ such that $v_j \leq x, \forall j < i$, and $v_k \geq x,
 \forall k > i$ \
-**Time:** $O(\log{n})$
+**Time** $O(\log{n})$
 
-The algorithm works recursively for a range of the vector, denoted by `start`
-and `end`. We check the element in the `middle` of the range. If it is not
-element we are looking for, we seek the range between `start` and `middle` if
-the sought element is smaller, or the range between `middle` and `end` if it is
-larger. If the range has length zero, the element is not in the vector, but it
-could be inserted at `start` while maintaining the vector sorted.
+The algorithm works recursively for a range $[a, b)$ of the vector $V$, with $0
+\leq a < b \leq n$. Let $m = (a + b) / 2$ denote the middle of the range.  If
+$v_m = x$, the desired index is $m$. If not, we check the range $[a, m)$ if $x <
+v_m$, or $[m + 1, b)$ otherwise. If $a = b$, then $a$ is the index where $x$ is
+supposed to be inserted.
 
 ```c
 int binary_search(int vector[], int size, int value) {
-    int start = 0;
-    int end = size;
+    int start = 0, end = size;
     while (start < end) {
         int middle = (start + end) / 2;
         int compare = vector[middle] - value;
@@ -73,10 +71,10 @@ void insert(int vector[], int *size, int value) {
 
 Given an unsorted vector, sort all its elements.
 
-**Input:** An unsorted vector $V$ of length $n$ \
-**Effect:** The vector $V$ becomes sorted \
-**Time:** $O(n \log{n})$ \
-**Space:** $O(n)$
+**Input** An unsorted vector $V$ of length $n$ \
+**Effect** The vector $V$ becomes sorted \
+**Time** $O(n \log{n})$ \
+**Space** $O(n)$
 
 The algorithm works recursively for a range $[a, b)$ of the vector $V$, with
 $0 \leq a < b \leq n$. Let $m = (a + b) / 2$ denote the middle of the range.
@@ -120,17 +118,17 @@ void sort(elem_t vector[], int size) {
 
 Given an unsorted vector, sort all its elements.
 
-**Input:** An unsorted vector $V$ of length $n$ \
-**Effect:** The vector becomes sorted \
-**Time:** $O(n \log{n})$, on average \
-**Space:** $O(1)$
+**Input** An unsorted vector $V$ of length $n$ \
+**Effect** The vector becomes sorted \
+**Time** $O(n \log{n})$, on average \
+**Space** $O(1)$
 
 The algorithm works recursively for a range $[a, b)$ of the vector $V$, with
 $0 \leq a < b \leq n$. First, we choose any element of the vector as pivot.
 Let its index be $p$, with $a \leq p < b$. Then we swap some elements of the
 vector until we have $v_i \leq v_p, \forall i < p$,
 and $v_j > v_p, \forall j > p$. Finally we sort the non-empty ranges
-$[a, p)$ and $[p, b)$.
+$[a, p)$ and $[p + 1, b)$.
 
 ```c
 void swap(elem_t vector[], int i, int j) {
@@ -187,17 +185,16 @@ void sort(int vector[], int size) {
 
 Given an unsorted vector, find its $k$-th smallest element.
 
-**Input:** An unsorted vector $V$ of length $n$, and an index $k$ such that
+**Input** An unsorted vector $V$ of length $n$, and an index $k$ such that
 $0 \leq k < n$ \
-**Output:** The $k$-th smallest element of the vector \
-**Time:** $O(n)$, on average
+**Output** The $k$-th smallest element of the vector \
+**Time** $O(n)$, on average
 
 The algorithm is similar to `quick_sort`. It works recursively for a range $[a,
-b)$ of the vector $V$, with $0 \leq a < b \leq n$.
-First we obtain a pivot at position
-$p$ such that $v_i \leq v_p, \forall i < p$, and $v_j > v_p, \forall j > p$.
-If $p = k$, then we have found it.  Otherwise, we search for
-the $k$-th element in the range $[a, p)$ if $k < p$, or $[p, b)$ otherwise.
+b)$ of the vector $V$, with $0 \leq a < b \leq n$.  First we obtain a pivot at
+position $p$ such that $v_i \leq v_p, \forall i < p$, and $v_j > v_p,
+\forall j > p$.  If $p = k$, then we have found it.  If not, we search for
+the $k$-th element in the range $[a, p)$ if $k < p$, or $[p + 1, b)$ otherwise.
 
 ```c
 int kth_index(int vector[], int start, int end, int k) {
