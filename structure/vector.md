@@ -176,7 +176,7 @@ int compare(const void *a, const void *b) {
 }
 
 void sort(int vector[], int size) {
-    qsort(vector, size, sizeof int, compare);
+    qsort(vector, size, sizeof (int), compare);
 }
 ```
 
