@@ -9,3 +9,4 @@ programming problems.
 * [Vectors](structure/vector.md)
 * [Linked lists](structure/linked-list.md)
 * [Stacks](structure/stack.md)
+* [Queues](structure/queue.md)
