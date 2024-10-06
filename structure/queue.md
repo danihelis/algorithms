@@ -108,7 +108,7 @@ int dequeue(queue_t *queue) {
 
 Queues of minima are queues whose smallest element can be peeked in $O(1)$. In
 order to achieve this, we [simulate a queue using
-stacks](#queues-using-two-stacks) the same way we did as above. The difference
+stacks](#queues-using-two-stacks) the same way as we did above. The difference
 is that we replace each original stack $S$ by two stacks $\dot{S}$ and
 $\bar{S}$.  We will store the smallest values (the minima) in $\dot{S}$ and the
 remaining values in $\bar{S}$.  When we would push an element $x$ into $S$, we
