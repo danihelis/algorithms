@@ -57,6 +57,7 @@ the worst case, retrieving an element would cost $O(n)$.
 different indices. If there is a collision with the first index, we try the next
 one and so forth, until there is no collision. Given a hash function $f$, we can
 create this new hash function $g$ as:
+
 $$g(x, t) = f(x) + k \cdot t \mod{n},$$
 
 where $k$ and $n$ are relative primes. In the worst case, retrieving an element
