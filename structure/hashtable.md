@@ -49,15 +49,14 @@ function. There are many strategies to deal with it, and we present two simple
 strategies. Let $n$ be the size of the hash table, and suppose that it will
 store $O(n)$ elements in the worst case.
 
-**Linked list.** We store a [simple linked list](structure/linked-list.md) in
-each entry of the table, which will contain all elements that have the same hash
-value. In the worst case, retrieving an element would cost $O(n)$.
+**Linked list.** We store a [simple linked list](./linked-list.md) in each entry
+of the table, which will contain all elements that have the same hash value. In
+the worst case, retrieving an element would cost $O(n)$.
 
 **Static collision.** We use a hash function that produces a sequence of
 different indices. If there is a collision with the first index, we try the next
 one and so forth, until there is no collision. Given a hash function $f$, we can
 create this new hash function $g$ as:
-
 $$g(x, t) = f(x) + k \cdot t \mod{n},$$
 
 where $k$ and $n$ are relative primes. In the worst case, retrieving an element
