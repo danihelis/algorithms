@@ -116,8 +116,9 @@ compare it to the top of $\dot{S}$ and either push it into $\dot{S}$ if $x$ is
 smaller, or into $\bar{S}$ otherwise. We must also annotate the queue position
 for $x$, so that we can dequeue it in the correct order. When we would pop an
 element from $S$, we pop it from either $\dot{S}$ or $\bar{S}$ depending on the
-queue position annotated. The minimum value of the queue is guaranteed to be top
-element of either the enqueue stack of minima or the dequeue stack of minima.
+queue position annotated. The minimum value of the queue is guaranteed to be the
+top element of either the enqueue stack of minima or the dequeue stack of
+minima.
 
 ```c
 #include <assert.h>
