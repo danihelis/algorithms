@@ -188,7 +188,7 @@ Given an unsorted vector, find its $k$-th smallest element.
 **Input** An unsorted vector $V$ of length $n$, and an index $k$ such that
 $0 \leq k < n$ \
 **Output** The $k$-th smallest element of the vector \
-**Time** $O(\log{n})$, on average
+**Time** $O(n)$, on average
 
 The algorithm is similar to `quick_sort`. It works recursively for a range $[a,
 b)$ of the vector $V$, with $0 \leq a < b \leq n$.  First we obtain a pivot at
