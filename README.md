@@ -11,3 +11,4 @@ programming problems.
 * [Stacks](structure/stack.md)
 * [Queues](structure/queue.md)
 * [Hash tables](structure/hashtable.md)
+* [Heaps](structure/heap.md)
