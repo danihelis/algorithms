@@ -16,7 +16,7 @@ children $c(i)$ as follows:
 
 $$p(i) = \lfloor (i - 1) / 2 \rfloor$$
 
-$$c(i) = \left(2 \, i + 1,\: 2 \, i + 2\right)$$
+$$c(i) = \left(2i + 1, ~ 2i + 2\right)$$
 
 ```mermaid
 flowchart TD
