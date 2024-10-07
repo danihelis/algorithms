@@ -11,12 +11,12 @@ first-inserted element.
 
 A heap is logically designed as a balanced binary tree, but instead of using
 linked lists, we use a fixed-size vector to store the data. Given a node stored
-in the vector at index $i$, we compute the indices of its parent $p(i)$ and
+in the vector at index $i$, we compute the indices of its parent $p(i)$ and its
 children $c(i)$ as follows:
 
 $$p(i) = \lfloor (i - 1) / 2 \rfloor$$
 
-$$c(i) = \{2 \, i + 1,\: 2 \, i + 2\}$$
+$$c(i) = \left(2 \, i + 1,\: 2 \, i + 2\right)$$
 
 ```mermaid
 flowchart TD
@@ -133,7 +133,7 @@ int remove(heap_t *heap) {
 
 ## Construction
 
-Build a heap from an unsorted vector.
+Build a heap from a list of elements.
 
 **Input** A list of $n$ elements \
 **Output** A heap containing these $n$ elements \
