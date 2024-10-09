@@ -200,8 +200,6 @@ that holds its (previous) larger siblings.
 ```
 
 ```c
-#include <assert.h>
-
 belem_t * insert_with_split(bnode_t *node, int value) {
     int index, i;
     belem_t temporary, *element;
