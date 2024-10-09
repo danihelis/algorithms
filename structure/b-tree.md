@@ -35,9 +35,9 @@ section, we present a B-tree.
 
 B-trees are a type of balanced trees. Every node of a B-tree (except the root)
 contains between $k/2$ and $k$ elements, where $k$ is a parameter of the B-tree.
-The elements inside a node are sorted. Each element has a descendent tree with
+The elements inside a node are sorted. Each element has a descendant tree with
 elements greater than it, but lesser than its sibling element. The node itself
-also has a descendent tree, which holds lower elements.  The following example
+also has a descendant tree, which holds lower elements.  The following example
 illustrates a B-tree with $k=2$.
 
 ```mermaid
@@ -112,7 +112,7 @@ Search for an element in the B-tree.
 We start the search from a node, selecting the largest element $e$ such that
 $e \leq x$. If $e = x$, we have found the element. If not, we descend into
 $e$'s tree and repeat the search. If there is no such $e$, we search the node's
-descendent tree that contains lower elements.
+descendant tree that contains lower elements.
 
 ```c
 int find_index(bnode_t *node, int value) {
@@ -153,9 +153,12 @@ To insert a new value in a B-tree, we first descend to the leaf node that will
 contain the new element and insert it at the correct position of the vector. If
 the node ends up holding $k + 1$ elements, we must split it in half.  The first
 $k/2$ elements remain in the node, while the last $k/2$ are moved into a new
-tree $t$. The excess element $e$ at the middle of the vector has its descendent
+tree $t$. The excess element $e$ at the middle of the vector has its descendant
 tree moved into the lower branch of $t$. We set $t$ as the new descendant of
 $e$, and proceed to insert $e$ into the parent node, following the same steps.
+If the root node ends up being split, we must create a new root node to store
+the ascending element that will come, and move the previous root into the lower
+branch of the new root.
 
 Example: after an element is inserted in a leaf node, the node has more elements
 than is allowed ($k$ = 2). It must be split.
@@ -175,7 +178,7 @@ than is allowed ($k$ = 2). It must be split.
         end
 ```
 
-After the split, the middle element ascends. It has a new descendent tree
+After the split, the middle element ascends. It has a new descendant tree
 that holds its (previous) larger siblings.
 
 ```mermaid
