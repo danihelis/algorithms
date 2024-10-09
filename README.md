@@ -1,8 +1,7 @@
 # Repository of algorithms
 
-A selection of basic and classic algorithms written in ANSI C. They were
-written as a reference for my personal study while solving competitive
-programming problems.
+A selection of common and useful algorithms written in ANSI C. They were
+written as a reference while solving competitive programming problems.
 
 ### Data structures
 

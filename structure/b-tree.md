@@ -127,7 +127,7 @@ int * search_bnode(bnode_t *node, int value) {
     int index = find_index(node, value);
     if (index >= 0 && node->data[index].value == value) {
         return &node->data[index].value;
-    } else if (index >= 0 && node->data[index].greater != NULL)
+    } else if (index >= 0 && node->data[index].greater != NULL) {
         return search_bnode(node->data[index].greater, value);
     } else if (index < 0 && node->lower != NULL) {
         return search_bnode(node->lower, key);
