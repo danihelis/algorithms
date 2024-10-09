@@ -12,4 +12,4 @@ programming problems.
 * [Queues](structure/queue.md)
 * [Hash tables](structure/hashtable.md)
 * [Heaps](structure/heap.md)
-* [B-trees](structures/b-tree.md)
+* [B-trees](structure/b-tree.md)
