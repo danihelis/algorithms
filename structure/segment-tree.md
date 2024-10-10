@@ -33,10 +33,10 @@ two examples:
   in an interval. We define the evaluation function $f: \{\alpha, \beta\} \times
   \mathbb{N} \rightarrow \mathbb{N}$ as
 
-  $$f(s, n) = \begin{cases}
+  $`f(s, n) = \begin{cases}
         n & \text{if } s = \alpha \\
         0 & \text{otherwise} \\
-  \end{cases}$$
+  \end{cases}`$
 
   and $n_1 \oplus n_2 = n_1 + n_2$.
 
@@ -45,19 +45,19 @@ two examples:
   interval. We define the evaluation function $f: \mathbb{Z} \times \mathbb{N}
   \rightarrow \{ +, -, 0\}$ as
 
-  $$f(x, n) = \begin{cases}
+  $`f(x, n) = \begin{cases}
         0 & \text{if } x = 0 \\
         + & \text{if } x > 0 \text{ or } n \text{ is even} \\
         - & \text{otherwise} \\
-  \end{cases}.$$
+  \end{cases}`$
 
   and
 
-  $$e_1 \oplus e_2 = \begin{cases}
+  $`e_1 \oplus e_2 = \begin{cases}
         0 & \text{if } e_1 = 0 \text{ or } e_2 = 0 \\
         + & \text{if } e_1 = e_2 \\
         - & \text{otherwise} \\
-  \end{cases}$$
+  \end{cases}`$
 
 In this section, we will assume that the types and functions below are defined.
 
