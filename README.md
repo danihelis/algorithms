@@ -12,3 +12,4 @@ written as a reference while solving competitive programming problems.
 * [Hash tables](structure/hashtable.md)
 * [Heaps](structure/heap.md)
 * [B-trees](structure/b-tree.md)
+* [Segment trees](structure/segment-tree.md)
