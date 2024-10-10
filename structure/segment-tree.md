@@ -33,10 +33,10 @@ two examples:
   in an interval. We define the evaluation function $f: \{\alpha, \beta\} \times
   \mathbb{N} \rightarrow \mathbb{N}$ as
 
-  $$f(s, n) = \left\{ \begin{array}{ll}
-                n, & \text{if } s = \alpha \\
-                0, & \text{otherwise} \\
-              \end{array} \right.$$
+  $$`f(s, n) = \left\{ \begin{array}{ll}
+        n \quad & \text{if } s = \alpha \\
+        0 \quad & \text{otherwise} \\
+    \end{array} \right.`$$
 
   and $n_1 \oplus n_2 = n_1 + n_2$.
 
@@ -45,25 +45,24 @@ two examples:
   interval. We define the evaluation function $f: \mathbb{Z} \times \mathbb{N}
   \rightarrow \{ +, -, 0\}$ as
 
-  $$f(x, n) = \left\{ \begin{array}{ll}
-                0, & \text{if } x = 0 \\
-                +, & \text{if } x > 0 \text{ or } n \text{ is even} \\
-                -, & \text{otherwise} \\
-              \end{array} \right.$$
+  $$`f(x, n) = \left\{ \begin{array}{ll}
+        0 \quad & \text{if } x = 0 \\
+        + \quad & \text{if } x > 0 \text{ or } n \text{ is even} \\
+        - \quad & \text{otherwise} \\
+  \end{array} \right.`$$
 
   and
 
-  $$e_1 \oplus e_2 = \left\{ \begin{array}{ll}
-                0, & \text{if } e_1 = 0 \text{ or } e_2 = 0 \\
-                +, & \text{if } e_1 = e_2 \\
-                -, & \text{otherwise} \\
-            \end{array} \right.$$
+  $$`e_1 \oplus e_2 = \left\{ \begin{array}{ll}
+        0 \quad & \text{if } e_1 = 0 \text{ or } e_2 = 0 \\
+        + \quad & \text{if } e_1 = e_2 \\
+        - \quad & \text{otherwise} \\
+  \end{array} \right.`$$
 
 In this section, we will assume that the types and functions below are defined.
 
 ```c
 eval_t evaluate(symbol_t symbol, int quantity);
-
 eval_t combine(eval_t e1, eval_t e2);
 ```
 
