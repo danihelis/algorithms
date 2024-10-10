@@ -45,11 +45,13 @@ two examples:
   interval. We define the evaluation function $f: \mathbb{Z} \times \mathbb{N}
   \rightarrow \{ +, -, 0\}$ as
 
-  $$`f(x, n) = \left\{ \begin{array}{ll}
+  ```math
+  f(x, n) = \left\{ \begin{array}{ll}
         0 \quad & \text{if } x = 0 \\
         + \quad & \text{if } x > 0 \text{ or } n \text{ is even} \\
         - \quad & \text{otherwise} \\
-  \end{array} \right.`$$
+  \end{array} \right.
+  ```
 
   and
 
