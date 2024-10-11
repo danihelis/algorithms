@@ -7,12 +7,12 @@ performing set union.
 Let $V=(v_0, \ldots, v_{n-1})$ be a vector with $n$ elements. We use a
 fixed-size vector to indicate the set of each element $v_i \in V$.  Instead of
 using a unique identifier for set $S \subseteq V$, we identify $S$ by the index
-of any of its contained elements $v \in S$. Exactly one element of $S$ will use
-its own index to indicate $S$, so let it be called the head of set $S$.  When we
-retrieve the set of an element, we update its reference so that it points to the
-head of the set.  To join two sets, we make the head of one set point to the
-head of the other.  These operations are quite efficient, and run in
-$o(\log{n})$.
+of any of its contained elements $v \in S$, as long as only one element of $S$
+uses its own index to indicate $S$. Let this element that points to itself be
+called the head of the set.  When we retrieve the set of an element, we update
+its reference so that it points to the head of the set. When we join two sets,
+we make the head of one set point to the head of the other.  These operations
+are quite efficient, and run in $o(\log{n})$.
 
 ```c
 const int MAX_SIZE = 10000;
