@@ -1,11 +1,11 @@
 # Segment Tree
 
-Segment trees are binary trees used to represent the ranges of a sequence.  Let
-$S = (s_0, ..., s_{n-1})$ be a sequence of $n$ elements. The root node of $S$'s
-segment tree represents the range $[0, n)$, and it branches out into two
-sub-trees: one for range $[0, n/2)$, and another for $[n/2, n)$. The leaves of
-the segment tree represent the range $[i, i+1), \forall i: 0 \leq i < n$, that
-is, the element $s_i, \forall s_i \in S$.
+Segment trees are binary trees used to compute information from any range over a
+sequence.  Let $S = (s_0, ..., s_{n-1})$ be a sequence of $n$ elements. The root
+node of $S$'s segment tree represents the range $[0, n)$, and it branches out
+into two sub-trees: one for range $[0, n/2)$, and another for $[n/2, n)$. The
+leaves of the segment tree represent the range $[i, i+1), \forall i: 0 \leq i <
+n$, that is, each element $s_i \in S$.
 
 Segment trees are particularly effective when we need to evaluate a combination
 of values from subsequence $(s_a, \ldots, s_{b-1}) \subseteq S$.
@@ -14,8 +14,8 @@ of values from subsequence $(s_a, \ldots, s_{b-1}) \subseteq S$.
 ## Sequence evaluation
 
 In order to evaluate the combination of values from a sequence $S \in \Sigma^*$,
-we must first define a function $f: \Sigma \times \mathbb{N} \rightarrow E$ that
-works as this: given a single element $s \in \Sigma$ and how many times it
+we must first define an evaluation function $f: \Sigma \times \mathbb{N}
+\rightarrow E$. Given a single element $s \in \Sigma$ and how many times it
 appears in a subsequence, $f$ produces an evaluation from set $E$. We must also
 define a binary operator $\oplus$ that combines two evaluations $e_1, e_2 \in
 E$.  With these functions, we can evaluate a subsequence $S_{a,b} = (s_a,
@@ -25,13 +25,13 @@ Note this identity:
 $$\underbrace{f(s, 1) \oplus \ldots \oplus f(s, 1)}_{n \text{ values}} = f(s, 1)
 \oplus^{n-1} f(s, 1) = f(s, n)$$
 
-The evaluation function $f$ must defined according to the application. Here are
-two examples:
+The evaluation function $f$ must be defined according to the application. Here
+are two examples:
 
 * Each element of the sequence is either white $\alpha$ or black $\beta$, so
-  $\Sigma = \{\alpha, \beta\}$. We want to compute the number of white elements
-  in an interval. We define the evaluation function $f: \{\alpha, \beta\} \times
-  \mathbb{N} \rightarrow \mathbb{N}$ as
+  $`\Sigma = \{\alpha, \beta\}`$. We want to compute the number of white elements
+  in an interval. We define the evaluation function $`f: \{\alpha, \beta\} \times
+  \mathbb{N} \rightarrow \mathbb{N}`$ as
 
   $`f(s, n) = \begin{cases}
         n & \text{if } s = \alpha \\
@@ -42,8 +42,8 @@ two examples:
 
 * Each element of the sequence is an integer $x \in \mathbb{Z}$.  We want to
   compute the signal resulting from the multiplication of all numbers in an
-  interval. We define the evaluation function $f: \mathbb{Z} \times \mathbb{N}
-  \rightarrow \{ +, -, 0\}$ as
+  interval. We define the evaluation function $`f: \mathbb{Z} \times \mathbb{N}
+  \rightarrow \{ +, -, 0\}`$ as
 
   $`f(x, n) = \begin{cases}
         0 & \text{if } x = 0 \\
