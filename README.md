@@ -13,3 +13,4 @@ written as a reference while solving competitive programming problems.
 * [Heaps](structure/heap.md)
 * [B-trees](structure/b-tree.md)
 * [Segment trees](structure/segment-tree.md)
+* [Union-find disjoint sets](structure/set.md)
