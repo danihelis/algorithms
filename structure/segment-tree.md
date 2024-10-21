@@ -20,7 +20,7 @@ appears in a subsequence, $f$ produces an evaluation from set $E$. We must also
 define a binary operator $\oplus$ that combines two evaluations $e_1, e_2 \in
 E$.  With these functions, we can evaluate a subsequence $S_{a,b} = (s_a,
 \ldots, s_{b-1})$ by computing $f(s_a, 1) \oplus \ldots \oplus f(s_{b-1}, 1)$.
-Note this identity:
+Note that
 
 $$\underbrace{f(s, 1) \oplus \ldots \oplus f(s, 1)}_{n \text{ values}} = f(s, 1)
 \oplus^{n-1} f(s, 1) = f(s, n)$$
