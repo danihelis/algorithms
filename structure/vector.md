@@ -207,3 +207,4 @@ int kth_index(int vector[], int start, int end, int k) {
 int kth_element(int vector[], int size, int k) {
     return vector[kth_index(vector, 0, size, k)];
 }
+```
