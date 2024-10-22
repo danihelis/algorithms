@@ -9,6 +9,6 @@ plugins:
   - jekyll-remote-theme
 
 # MathJaX
-markdown: kramdown
-kramdown:
-  math_engine: mathjax
+# markdown: kramdown
+# kramdown:
+#   math_engine: mathjax
