@@ -1,9 +1,7 @@
 # Site info
-site:
-  title: Repository of Algorithms
-  author: Daniel Donadon
-  description: >
-    A selection of common and useful algorithms written in ANSI C
+title: Repository of Algorithms
+author: Daniel Donadon
+description: A selection of common and useful algorithms written in ANSI C
 
 # Theme
 remote_theme: pages-themes/cayman@v0.2.0
