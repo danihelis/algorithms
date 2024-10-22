@@ -1,6 +1,16 @@
+# Site info
+site:
+  title: Repository of Algorithms
+  author: Daniel Donadon
+  description: >
+    A selection of common and useful algorithms written in ANSI C
+
+# Theme
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme
+
+# MathJaX
 markdown: kramdown
 kramdown:
   math_engine: mathjax
