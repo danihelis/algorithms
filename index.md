@@ -7,7 +7,7 @@ following subjects:
 * [Graphs](graph/index.md)
 
 
-### About
+# About
 
 These algorithms were written as part of my personal study of competitive
 programming problems. You can see 

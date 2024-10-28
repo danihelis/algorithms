@@ -1,5 +1,6 @@
 ---
 is_index: true
+order: 2
 ---
 
 # Graphs
