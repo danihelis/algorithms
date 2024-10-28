@@ -4,6 +4,7 @@ A selection of common and useful algorithms written in ANSI C. They cover the
 following subjects:
 
 * [Data structures](structure/index.md)
+* [Graphs](graph/index.md)
 
 
 ### About

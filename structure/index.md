@@ -7,12 +7,13 @@ is_index: true
 This section contains basic algorithms for general data structures and their
 time complexity. They are used to insert and query data based on an integer key
 field, and vary on their efficiency. Modern programming languages already
-provide most of these structures builtin.
+provide most of these structures as builtin types or classes.
 
-One data structure that does not appear here is binary tree. Instead of
+One structure in particular that does not appear here is binary tree. Instead of
 presenting a simple version of binary tree, which is unbalanced and possibly not
 efficient, I decided to present a B-tree, which is rarely used in contests, but
-is a safer alternative.
+is a safer alternative. (Other approaches could be AVL trees and Red-Black
+trees, but I have a hard time remembering all the rotation cases.)
 
 
 * [Vectors](./vector.md)
