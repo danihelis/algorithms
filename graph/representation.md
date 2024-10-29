@@ -60,8 +60,8 @@ In an adjacency list representation, we store a list $E(v)$ of edges for each
 vertex $v \in V$ in the graph. We use fixed vectors to represent each list, but
 other structures could be used as well. Accessing a specific edge $(i, j) \in E$
 for vertices $i, j \in V$ is done in $O(|V|)$ in the worst case, but traversing
-the graph takes $O(|E| + |V|)$, which is faster than matrix representation. It
-is specially advantageous in sparse graphs, where $|E| \approx |V|$.
+the graph takes only $O(|E| + |V|)$. It is specially advantageous in sparse
+graphs, where $|E| \approx |V|$.
 
 ```c
 #define MAX_VERTICES  1000
