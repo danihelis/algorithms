@@ -1,3 +1,7 @@
+---
+order: 3
+---
+
 # Stacks
 
 Stacks store data in a way that the first element inserted is the last one

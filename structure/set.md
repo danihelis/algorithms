@@ -1,3 +1,7 @@
+---
+order: 9
+---
+
 # Union-Find Disjoint Set
 
 Union-find disjoint sets are a type of grouping where each element is part of a

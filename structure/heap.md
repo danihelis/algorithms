@@ -1,3 +1,7 @@
+---
+order: 6
+---
+
 # Heaps
 
 Heaps are used to efficiently retrieve the smallest element of a data set.

@@ -1,3 +1,7 @@
+---
+order: 1
+---
+
 # Graph Representation
 
 A graph $G = (V, E)$ is a structure that contains a set of vertices $V$ and a
@@ -10,7 +14,7 @@ vertices is irrelevant: $(u,v)\in E$ implies that $(v,u)\in E$, $\forall u, v
 ## Matrix
 
 In a matrix representation, we store the graph as a $|V| \times |V|$ matrix $M$
-where $m_{i, j} = 1$ if $(i, j) \in E$ but 0 otherwise, for each $i, j \in V$.
+where $m_{i, j} = 1$ if $(i, j) \in E$ and 0 otherwise, $\forall i, j \in V$.
 Accessing a specific edge $(i, j) \in E$ is done in $O(1)$, but traversing the
 entire graph takes $O(V^2)$. It is ideal for dense graphs where $|E| \approx
 |V|^2$.
@@ -38,7 +42,7 @@ double * get_weight(graph_t *graph, int i, int j) {
     return graph->edge[i][j] ? &graph->weight[i][j] : NULL;
 }
 
-void traverse(graph_t *graph) {
+void print_edges(graph_t *graph) {
     int i, j;
     for (i = 0; i < graph->num_vertices; i++) {
         for (j = 0; j < graph->num_vertices; j++) {
@@ -56,8 +60,8 @@ In an adjacency list representation, we store a list $E(v)$ of edges for each
 vertex $v \in V$ in the graph. We use fixed vectors to represent each list, but
 other structures could be used as well. Accessing a specific edge $(i, j) \in E$
 for vertices $i, j \in V$ is done in $O(|V|)$ in the worst case, but traversing
-the graph takes just $O(|E|)$, which is faster than matrix representation. It is
-specially advantageous in sparse graphs, where $|E| \approx |V|$.
+the graph takes $O(|E| + |V|)$, which is faster than matrix representation. It
+is specially advantageous in sparse graphs, where $|E| \approx |V|$.
 
 ```c
 #define MAX_VERTICES  1000
@@ -87,7 +91,7 @@ double * get_weight(graph_t *graph, int i, int j) {
     return NULL;
 }
 
-void traverse(graph_t *graph) {
+void print_edges(graph_t *graph) {
     int i, e;
     for (i = 0; i < graph->num_vertices; i++) {
         for (e = 0; e < graph->num_edges[i]; e++) {

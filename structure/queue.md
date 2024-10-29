@@ -1,3 +1,7 @@
+---
+order: 4
+---
+
 # Queues
 
 Queues store data in a way that the first element inserted is the first one

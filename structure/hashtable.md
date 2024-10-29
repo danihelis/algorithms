@@ -1,3 +1,7 @@
+---
+order: 5
+---
+
 # Hash Tables
 
 Hash tables are used to efficiently store and retrieve unique data.  Ideally,

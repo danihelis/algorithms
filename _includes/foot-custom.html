@@ -1,0 +1,25 @@
+{% unless page.is_index -%}
+  {%- assign sibling_pages = site.pages | sort: "order" | where: "dir", page.dir -%}
+  {%- assign index_page = sibling_pages | find: "is_index", true -%}
+  <table class="foot-table">
+    <tr>
+      <th>
+        <a href="{{ index_page.url | relative_url }}">{{ index_page.title }}</a>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        {% for other_page in sibling_pages -%}
+          {%- unless other_page.is_index -%}
+            {%- if other_page.order == page.order -%}
+              <b>{{ other_page.title }}</b>
+            {%- else -%}
+              <a href="{{ other_page.url | relative_url }}">{{ other_page.title }}</a>
+            {%- endif %} |
+          {% endunless -%}
+        {%- endfor %}
+      </td>
+    </tr>
+  </table>
+  <br>
+{%- endunless %}

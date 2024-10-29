@@ -1,3 +1,7 @@
+---
+order: 8
+---
+
 # Segment Tree
 
 Segment trees are binary trees used to compute information from any range over a

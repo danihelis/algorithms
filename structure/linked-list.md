@@ -1,3 +1,6 @@
+---
+order: 2
+---
 # Linked Lists
 
 Linked lists contain an unbounded number of elements linked together by

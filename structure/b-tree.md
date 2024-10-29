@@ -1,3 +1,7 @@
+---
+order: 7
+---
+
 # B-trees
 
 Trees are recursive structures composed of nodes. A node is either a single leaf

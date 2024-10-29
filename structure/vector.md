@@ -1,3 +1,7 @@
+---
+order: 1
+---
+
 # Vectors
 
 Fixed-size vectors are used as storage for finite sequences of values, and may
