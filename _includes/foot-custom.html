@@ -1,16 +1,16 @@
 {% unless page.is_index -%}
-  {%- assign sibling_pages = site.pages | where: "dir", page.dir | where: "is_index", false | sort: "order" -%}
-  {%- assign indices = site.pages | where: "is_index", true | where: "dir", page.dir -%}
-  {%- assign index_page = indices[0] -%}
   <table class="foot-table">
     <tr>
       <th>
+        {% assign indices = site.pages | where: "is_index", true | where: "dir", page.dir -%}
+        {%- assign index_page = indices[0] -%}
         <a href="{{ index_page.url | relative_url }}">{{ index_page.title }}</a>
       </th>
     </tr>
     <tr>
       <td>
-        {% for other_page in sibling_pages -%}
+        {% assign sibling_pages = site.pages | where: "dir", page.dir | sort: "order" | unshift: index_page -%}
+        {%- for other_page in sibling_pages -%}
           {%- if other_page.order == page.order -%}
             <b>{{ other_page.title }}</b>
           {%- else -%}
