@@ -1,6 +1,7 @@
 {% unless page.is_index -%}
   {%- assign sibling_pages = site.pages | sort: "order" | where: "dir", page.dir -%}
-  {%- assign index_page = sibling_pages | find: "is_index", true -%}
+  {%- assign indices = sibling_pages | where: "is_index", true -%}
+  {%- assign index_page = indices[0] -%}
   <table class="foot-table">
     <tr>
       <th>
