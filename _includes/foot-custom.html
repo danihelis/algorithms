@@ -9,7 +9,7 @@
     </tr>
     <tr>
       <td>
-        {% assign sibling_pages = site.pages | where: "dir", page.dir | sort: "order" | unshift: index_page -%}
+        {% assign sibling_pages = site.pages | where: "dir", page.dir | where_exp: "item", "item.is_index != true" | sort: "order" -%}
         {%- for other_page in sibling_pages -%}
           {%- if other_page.order == page.order -%}
             <b>{{ other_page.title }}</b>
