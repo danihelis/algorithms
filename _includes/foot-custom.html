@@ -16,7 +16,8 @@
               <b>{{ other_page.title }}</b>
             {%- else -%}
               <a href="{{ other_page.url | relative_url }}">{{ other_page.title }}</a>
-            {%- endif %} |
+            {%- endif -%}
+            {%- unless forloop.last %} | {% endunless -%}
           {% endunless -%}
         {%- endfor %}
       </td>

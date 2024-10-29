@@ -4,19 +4,19 @@
 @import "{{ site.theme }}";
 
 .site-footer {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
-.foot-table {
-    font-size: 0.9rem;
-    display: table;
-    text-align: center;
-}
+table.foot-table {
+  font-size: 0.9rem;
+  display: table;
+  text-align: center;
 
-.foot-table th {
+  th {
     background: #159957;
-}
 
-.foot-table th a {
-    color: white;
+    a {
+      color: white;
+    }
+  }
 }
