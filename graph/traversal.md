@@ -42,9 +42,9 @@ makes the traversal fully explore a connected vertex $x \in V(v)$ before
 visiting the next connected vertex $y \in V(v), y \neq x$.  The graph in the
 example would be traversed in the following order:
 
-<center>
+<p align="center">
 (alpha, beta, gamma, zeta, iota, kappa, lambda, eta, mu, delta, epsilon, theta)
-</center>
+</p>
 
 ```c
 #include <string.h>
@@ -96,9 +96,9 @@ retrieve the vertices. When exploring a vertex $v \in V$, we first visit each of
 its connected vertices $V(v)$, and then we proceed in the exploration.  The
 graph in the example above would be traversed in the following order:
 
-<center>
+<p align="center">
 (alpha, beta, gamma, delta, epsilon, zeta, eta, theta, iota, kappa, lambda, mu)
-</center>
+</p>
 
 The algorithm is exactly the same as depth-first search, except for the queue.
 
@@ -143,9 +143,9 @@ To sort the vertices in topological order, we use an algorithm similar to
 For the graph in the example above, topological sort produces the following
 ordering:
 
-<center>
+<p align="center">
 (alpha, epsilon, theta, delta, gamma, eta, mu, zeta, lambda, kappa, iota, beta)
-</center>
+</p>
 
 
 ```c
