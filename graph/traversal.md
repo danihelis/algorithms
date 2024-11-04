@@ -42,9 +42,9 @@ makes the traversal fully explore a connected vertex $x \in V(v)$ before
 visiting the next connected vertex $y \in V(v), y \neq x$.  The graph in the
 example would be traversed in the following order:
 
-<div align="center">
+<center>
 (alpha, beta, gamma, zeta, iota, kappa, lambda, eta, mu, delta, epsilon, theta)
-</div>
+</center>
 
 ```c
 #include <string.h>
@@ -143,9 +143,9 @@ To sort the vertices in topological order, we use an algorithm similar to
 For the graph in the example above, topological sort produces the following
 ordering:
 
-||
-|:--:|
-|(alpha, epsilon, theta, delta, gamma, eta, mu, zeta, lambda, kappa, iota, beta)|
+<center>
+(alpha, epsilon, theta, delta, gamma, eta, mu, zeta, lambda, kappa, iota, beta)
+</center>
 
 
 ```c
