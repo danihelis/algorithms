@@ -36,7 +36,7 @@ typedef struct {
 
 ## Depth-First Search
 
-In a depth-first search, we use a [stack](/structure/stack.md) to store and
+In a depth-first search, we use a [stack](../structure/stack.md) to store and
 retrieve the vertices that are reachable from a starting vertex $v \in V$.  It
 makes the traversal fully explore a connected vertex $x \in V(v)$ before
 visiting the next connected vertex $y \in V(v), y \neq x$.  The graph in the
@@ -89,7 +89,7 @@ void visit_vertex(graph_t *graph, int vertex) {
 
 ## Breadth-First Search
 
-In a breadth-first search, we use a [queue](/structure/queue.md) to store and
+In a breadth-first search, we use a [queue](../structure/queue.md) to store and
 retrieve the vertices. When exploring a vertex $v \in V$, we first visit each of
 its connected vertices $V(v)$, and then we proceed in the exploration.  The
 graph in the example above would be traversed in the following order:
