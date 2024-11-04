@@ -139,7 +139,7 @@ To sort the vertices in topological order, we use an algorithm similar to
 For the graph in the example above, topological sort produces the following
 ordering:
 
-(alpha, epsilon, theta, delta, gamma, eta, mu, zeta, lambda, kappa, iota, beta)
+> (alpha, epsilon, theta, delta, gamma, eta, mu, zeta, lambda, kappa, iota, beta)
 
 ```c
 #include <string.h>
@@ -155,7 +155,6 @@ void visit_vertex(graph_t *graph, int vertex, int *index) {
     for (e = 0; e < graph->num_edges[vertex]; e++) {
         int next = graph->edge[vertex][e];
         if (!graph->visited[next]) visit_vertex(graph, next, index);
-        }
     }
     graph->sorted[(*index)++] = vertex;
 }
