@@ -16,7 +16,7 @@ labels, will be used as example.
         epsilon --> theta
 ```
 
-The algorithms use [adjacency lists](./representation/#adjacency-list) to
+The algorithms use [adjacency lists](./representation.md#adjacency-list) to
 represent the graph $G=(V, E)$. Each vertex $v \in V$ contains a list of edges
 $E(v) \subseteq E$ that connect it to another vertex $u \in V$.  We denote the
 set of vertices connected to $v$ as $V(v)$. All algorithms run in $O(|E| +
