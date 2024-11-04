@@ -66,9 +66,7 @@ graphs, where $|E| \approx |V|$.
 ```c
 #define MAX_VERTICES  1000
 
-struct vertex_s;
-
-typedef struct vertex_s {
+typedef struct {
     int edge[MAX_VERTICES][MAX_VERTICES];
     double weight[MAX_VERTICES][MAX_VERTICES];
     int num_edges[MAX_VERTICES];

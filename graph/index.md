@@ -12,3 +12,4 @@ To be more precise in the definitions, we make heavy use of mathematical
 notation, defined in each section.
 
 * [Graph representation](./representation.md)
+* [Graph traversal](./traversal.md)
