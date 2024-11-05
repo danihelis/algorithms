@@ -269,70 +269,89 @@ void get_articulations_and_bridges(graph_t *graph) {
 }
 ```
 
-----------
-
-# Draft
-
 ## Flood Fill
 
-**Input** A graph $G=(V,E)$ with mapping $m:V\rightarrow \mathbb{N}$,
-        an element $v \in V$ and a value $x \in \mathbb{N}$ \
-**Output** A new mapping $m$ such that
-         $m'(u) = x, \forall u \in C_v: m(u) = m(v)$, where $C_v \subseteq V$
-         is a connected component that contains $v$ \
-**Time** $O(|V| + |E|)$
+Given a matrix of colored pixels representing a picture, and a pixel $p$ in the
+picture, change the color of all pixels adjacent to $p$ and which have the same
+color as $p$ into a new color $x$.
+
+We can generalize this problem like this. Given a graph $G=(V,E)$ with a weight
+function $w:V\rightarrow \mathbb{N}$ and a vertex $v \in V$, change the weight
+of all vertices adjacent to $v$ to a new value $x$, but only those vertices that
+have the same weight $w(v)$ as $v$.
+
+To solve this problem, we use the flood fill algorithm, which is the same used
+for [connected components](#connected-components). A minor difference is that,
+instead of getting all adjacent vertices from the current vertex, we select only
+those that match the required property. The algorithm runs in $O(|E| + |V|)$ in
+the worst case.
+
 
 ```c
-    void flood_fill(graph_t *graph, int map[], int v, int x) {
-        int component[MAX_VERTICES];
-        int i, n, old_value;
+#define <string.h>
 
-        get_components(graph, component, &n);
-        old_value = map[v];
-        for (i = 0; i < graph->vertices; i++)
-            if (component[i] == component[v] && map[i] == old_value)
-                map[i] = x;
+typedef struct {
+    ...
+    char visited[MAX_VERTICES]; /* either 0 or 1 */
+    int weight[MAX_VERTICES];
+} graph_t;
+
+void visit_vertex(graph *graph, int vertex, int weight, int new_value) {
+    int e;
+    graph->visited[vertex] = graph->num_components;
+    graph->weight[vertex] = new_value;
+    for (e = 0; e < graph->num_edges[vertex]; e++) {
+        int next = graph->edge[vertex][e];
+        if (!graph->visited[next] && graph->weight[next] == weight) {
+            visit_vertex(graph, next, weight, value);
+        }
     }
+}
+
+void flood_fill(graph_t *graph, int vertex, int new_value) {
+    int v;
+    memset(graph->visited, 0, sizeof (int) * graph->num_vertices);
+    graph->num_components = 0;
+    visit_vertex(graph, vertex, graph->weight[vertex], new_value);
+}
 ```
 
-In flood fill applications, the graph $G=(V,E)$ is usually a grid with vertices
-representing 2D coordinates, $V \subset \mathbb{N}^2$. Two vertices
-$v_{i,j},v_{i',j'} \in V$ are connected if $|i-i'| + |j-j'| = 1$.
-
-The code below implements a special DFS traversal for this particular input. The
-mapping $m:V\rightarrow \mathbb{N}$ is coded as a matrix, and is enough to
-represent the graph.
+Even though we generalized the problem to use graphs, most flood fill
+applications use matrices to represent the data. We can easily adapt the
+algorithm above to use a [matrix](./representation.md#matrix) representation.
+Two points of the matrix, $p_1 = (x_1, y_1)$ and $p_2 = (x_2, y_2)$, are
+adjacent if $|x_1 - x_2| + |y_1 - y_2| \leq 1$. A simplified version of the
+flood fill algorithm using a matrix is presented below. It runs in $O(n^2)$ in
+the worst case, where $n$ is the largest dimension of the matrix.
 
 ```c
-    #define MAX_DIMENSION  1000
+#define MAX_DIMENSION  1000
 
-    typedef struct {
-        int i, j;
-    } coord_t;
+typedef struct {
+    int x, y;
+} point_t;
 
-    coord_t step[] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-    const int num_steps = 4;
+const point_t step[] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+const int num_steps = 4;
 
-    void flood_fill(int matrix[][], int n, int m, coord_t v, int x) {
-        coord_t c;
-        stack_t stack; /* assume a stack of coord_t */
-        int s, old_value;
-
-        old_value = matrix[v.i][v.j];
-        init_stack(&stack);
-        push(&stack, v);
-        matrix[v.i][v.j] = x;
-        while (!empty_stack(&stack)) {
-            v = pop(&stack);
-            for (s = 0; s < num_steps; s++) {
-                c.i = v.i + step[s].i;
-                c.j = v.j + step[s].j;
-                if (c.i >= 0 && c.i < n && c.j >= 0 && c.j < m &&
-                        matrix[c.i][c.j] == old_value) {
-                    psuh(&stack, c);
-                    matrix[c.i][c.j] = x;
-                }
+void flood_fill(int matrix[][], int rows, int columns, point_t point,
+                int new_value) {
+    point_t stack[MAX_DIMENSION * MAX_DIMENSION], next;
+    int value, top, i;
+    value = matrix[point.x][point.y];
+    matrix[point.x][point.y] = new_value;
+    stack[0] = point, top = 1;
+    while (top > 0) {
+        point = stack[--top];
+        for (i = 0; i < num_steps; i++) {
+            next.x = point.x + step[i].x;
+            next.y = point.y + step[i].y;
+            if (next.x >= 0 && next.x < columns && next.y >= 0 &&
+                    next.y < rows && matrix[next.x][next.y] == value) {
+                matrix[next.x][next.y] = new_value;
+                stack[top++] = next;
             }
         }
     }
+}
 ```
