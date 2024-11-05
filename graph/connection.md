@@ -6,12 +6,12 @@ order: 3
 
 In a graph $G=(V,E)$, two vertices $u,v \in V$ are connected if $(u,v) \in E$,
 or there is $k \in V, (u,k) \in E$ such that $k, v$ are connected. The sequence
-of edges that connects two vertices is called a path $p \in E^*$. We will denote
+of edges that connects two vertices is called a path $p \in E^\star$. We will denote
 this connection using the notation $u \overset{p}{\leadsto} v$, with $u, v \in
 V$. In a undirected graph, if $u \overset{p}{\leadsto} v$, then $v
 \overset{p}{\leadsto} u$.
 
-If a vertex $v \in V$ is connected to itself by a non empty path $p \in E^*$,
+If a vertex $v \in V$ is connected to itself by a non empty path $p \in E^\star$,
 that is, $v \overset{p}{\leadsto} v$, then $p$ is called a *cycle* and the graph
 is called *cyclic*. A directed acyclic graph is abbreviated DAG.
 
