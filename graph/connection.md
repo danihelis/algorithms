@@ -331,7 +331,6 @@ typedef struct {
     int x, y;
 } point_t;
 
-const point_t step[] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 const int num_steps = 4;
 
 void flood_fill(int matrix[][], int rows, int columns, point_t point,
