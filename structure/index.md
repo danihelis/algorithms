@@ -17,12 +17,14 @@ is a safer alternative. (Other approaches could be AVL trees and Red-Black
 trees, but I have a hard time remembering all the rotation cases.)
 
 
-* [Vectors](./vector.md)
-* [Linked lists](./linked-list.md)
-* [Stacks](./stack.md)
-* [Queues](./queue.md)
-* [Hash tables](./hashtable.md)
-* [Heaps](./heap.md)
-* [B-trees](./b-tree.md)
-* [Segment trees](./segment-tree.md)
-* [Union-find disjoint sets](./set.md)
+* [Vectors](./vector.md): binary search, merge and quick sort, order statistic
+* [Linked lists](./linked-list.md): search, insertion and removal for simple
+  unbounded lists
+* [Stacks](./stack.md): fixed-size stack operations
+* [Queues](./queue.md): fixed-size queue operations, queues of minima
+* [Hash tables](./hashtable.md): fixed-size tables with simple collision
+  treatment
+* [Heaps](./heap.md): search, insertion and removal for priority queues
+* [B-trees](./b-tree.md): search and insertion for balanced $k$-ary trees
+* [Segment trees](./segment-tree.md): query and update of data intervals
+* [Union-find disjoint sets](./set.md): search and merge of sets

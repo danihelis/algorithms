@@ -185,7 +185,7 @@ void sort(int vector[], int size) {
 ```
 
 
-## Order Statistics
+## Order Statistic
 
 Given an unsorted vector, find its $k$-th smallest element.
 

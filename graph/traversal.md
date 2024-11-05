@@ -51,7 +51,7 @@ example would be traversed in the following order:
 
 void visit_vertex(graph_t *graph, int vertex) {
     int stack[MAX_VERTICES], top, e;
-    stack[0] = vertex, top = 1, graph[vertex]->visited = 1;
+    stack[0] = vertex, top = 1, graph->visited[vertex] = 1;
     while (top > 0) {
         vertex = stack[--top];
         printf("%d\n", vertex);
@@ -80,7 +80,7 @@ visit each vertex.
 ```c
 void visit_vertex(graph_t *graph, int vertex) {
     int e;
-    graph[vertex]->visited = 1;
+    graph->visited[vertex] = 1;
     printf("%d\n", vertex);
     for (e = 0; e < graph->num_edges[vertex]; e++) {
         int next = graph->edge[vertex][e];
@@ -105,7 +105,7 @@ The algorithm is exactly the same as depth-first search, except for the queue.
 ```c
 void visit_vertex(queue_t* queue, int vertex) {
     int queue[MAX_VERTICES], head, tail, e;
-    queue[0] = vertex, head = 0, tail = 1, graph[vertex]->visited = 1;
+    queue[0] = vertex, head = 0, tail = 1, graph->visited[vertex] = 1;
     while (head < tail) {
         vertex = queue[head++];
         vertex = stack[--top];
@@ -158,7 +158,7 @@ typedef struct {
 
 void visit_vertex(graph_t *graph, int vertex, int *index) {
     int e;
-    graph[vertex]->visited = 1;
+    graph->visited[vertex] = 1;
     for (e = 0; e < graph->num_edges[vertex]; e++) {
         int next = graph->edge[vertex][e];
         if (!graph->visited[next]) visit_vertex(graph, next, index);
