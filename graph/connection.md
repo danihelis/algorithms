@@ -27,7 +27,7 @@ strongly connected components can have a connection between their vertices, but
 it cannot form a cycle. A DAG has no strongly connected components.
 
 In the following algorithms, we will use [adjacency lists](
-./representation.md#adjacency-lists) to represent a graph.
+./representation.md#adjacency-list) to represent a graph.
 
 ```c
 #define MAX_VERTICES  1000
@@ -331,6 +331,7 @@ typedef struct {
     int x, y;
 } point_t;
 
+const point_t step[] = { {0, 1}, {1, 0}, {0, -1}, {-1, 0} };
 const int num_steps = 4;
 
 void flood_fill(int matrix[][], int rows, int columns, point_t point,
