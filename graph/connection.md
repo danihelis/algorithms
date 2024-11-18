@@ -131,7 +131,7 @@ typedef struct {
     ...
     int visited[MAX_VERTICES];  /* timestamp of visit or 0 */
     int low[MAX_VERTICES];  /* lowest reachable timestamp */
-    char processed;  /* either 0 or 1 */
+    char processed[MAX_VERTICES];  /* either 0 or 1 */
 } graph_t;
 
 void visit_vertex(graph_t *graph, int vertex, int *counter, int stack[],
