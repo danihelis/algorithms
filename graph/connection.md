@@ -36,7 +36,7 @@ typedef struct {
     int edge[MAX_VERTICES][MAX_VERTICES];
     int num_edges[MAX_VERTICES];
     int num_vertices[MAX_VERTICES];
-    int component[MAX_VERTICES]; /* index from 0 to num_components-1 */
+    int component[MAX_VERTICES]; /* value from 0 to num_components-1 */
     int num_components;
 } graph_t;
 ```
