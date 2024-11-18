@@ -49,6 +49,11 @@ example would be traversed in the following order:
 ```c
 #include <string.h>
 
+typedef struct {
+    ...
+    char visited[MAX_VERTICES];
+} graph_t;
+
 void visit_vertex(graph_t *graph, int vertex) {
     int stack[MAX_VERTICES], top, e;
     stack[0] = vertex, top = 1, graph->visited[vertex] = 1;
@@ -69,7 +74,7 @@ void traverse(graph_t *graph) {
     int v;
     memset(graph->visited, 0, sizeof (int) * graph->num_vertices);
     for (v = 0; v < graph->num_vertices; v++) {
-        if (!graph->visied[v]) visit_vertex(graph, v);
+        if (!graph->visited[v]) visit_vertex(graph, v);
     }
 }
 ```
@@ -103,6 +108,11 @@ graph in the example above would be traversed in the following order:
 The algorithm is exactly the same as depth-first search, except for the queue.
 
 ```c
+typedef struct {
+    ...
+    char visited[MAX_VERTICES];
+} graph_t;
+
 void visit_vertex(queue_t* queue, int vertex) {
     int queue[MAX_VERTICES], head, tail, e;
     queue[0] = vertex, head = 0, tail = 1, graph->visited[vertex] = 1;
@@ -153,6 +163,7 @@ ordering:
 
 typedef struct {
     ...
+    char visited[MAX_VERTICES];
     int sorted[MAX_VERTICES]; /* index of 1st vertex, 2nd, etc. */
 } graph_t;
 
