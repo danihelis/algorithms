@@ -27,8 +27,8 @@ set of vertices connected to $v$ as $V(v)$. All algorithms run in $O(|E| +
 
 typedef struct {
     int edge[MAX_VERTICES][MAX_VERTICES];
+    int distance[MAX_VERTICES][MAX_VERTICES];
     int num_edges[MAX_VERTICES];
-    char visited[MAX_VERTICES];  /* either 0 or 1 */
     int num_vertices;
 } graph_t;
 

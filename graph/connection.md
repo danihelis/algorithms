@@ -6,9 +6,9 @@ order: 3
 
 In a graph $G=(V,E)$, two vertices $u,v \in V$ are connected if $(u,v) \in E$,
 or there is $k \in V, (u,k) \in E$ such that $k, v$ are connected. The sequence
-of edges that connects two vertices is called a path $p \in E^\star$. We will denote
-this connection using the notation $u \overset{p}{\leadsto} v$, with $u, v \in
-V$. In a undirected graph, if $u \overset{p}{\leadsto} v$, then $v
+of edges that connects two vertices is called a path $p \in E^\star$. We will
+denote this connection using the notation $u \overset{p}{\leadsto} v$, with $u,
+v \in V$. In a undirected graph, if $u \overset{p}{\leadsto} v$, then $v
 \overset{p}{\leadsto} u$.
 
 If a vertex $v \in V$ is connected to itself by a non empty path $p \in E^\star$,
@@ -321,8 +321,8 @@ applications use matrices to represent the data. We can easily adapt the
 algorithm above to use a [matrix](./representation.md#matrix) representation.
 Two points of the matrix, $p_1 = (x_1, y_1)$ and $p_2 = (x_2, y_2)$, are
 adjacent if $|x_1 - x_2| + |y_1 - y_2| \leq 1$. A simplified version of the
-flood fill algorithm using a matrix is presented below. It runs in $O(n^2)$ in
-the worst case, where $n$ is the largest dimension of the matrix.
+flood fill algorithm using a matrix is presented below. It runs in $O(n·m)$ in
+the worst case, where $n$ and $m$ are the dimensions of the matrix.
 
 ```c
 #define MAX_DIMENSION  1000
