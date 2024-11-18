@@ -223,7 +223,7 @@ typedef struct {
     ...
     int visited[MAX_VERTICES];  /* timestamp of visit or 0 */
     int low[MAX_VERTICES];  /* lowest reachable timestamp */
-    char processed;  /* either 0 or 1 */
+    char processed[MAX_VERTICES];  /* either 0 or 1 */
     char articulation[MAX_VERTICES]; /* either 0 or 1 */
     char bridge[MAX_VERTICES][MAX_VERTICES]; /* either 0 or 1 */
 } graph_t;
@@ -233,7 +233,7 @@ void visit_vertex(graph_t *graph, int vertex, int *counter, char first) {
     int e, connections;
     (*counter)++;
     graph->low[vertex] = graph->visited[vertex] = *counter;
-    different = 0;
+    connections = 0;
     for (e = 0; e < graph->num_edges[vertex]; e++) {
         int next = graph->edge[vertex][e];
         if (!graph->visited[next]) {  /* recursive exploration */
@@ -271,19 +271,20 @@ void get_articulations_and_bridges(graph_t *graph) {
 ## Flood Fill
 
 Given a matrix of colored pixels representing a picture, and a pixel $p$ in the
-picture, change the color of all pixels adjacent to $p$ and which have the same
-color as $p$ into a new color $x$.
+picture, change the color of all connected pixels whose color is the same
+as $p$ into a new color $x$. These pixels must be connected to each other and to
+$p$.
 
 We can generalize this problem like this. Given a graph $G=(V,E)$ with a weight
 function $w:V\rightarrow \mathbb{N}$ and a vertex $v \in V$, change the weight
-of all vertices adjacent to $v$ to a new value $x$, but only those vertices that
-have the same weight $w(v)$ as $v$.
+of all vertices in $C_w(v)$ to a new value $x$, where $C_w(v)$ is the connected
+component formed only by vertices whose weight is $w(v)$.
 
 To solve this problem, we use the flood fill algorithm, which is the same used
-for [connected components](#connected-components). A minor difference is that,
-instead of getting all adjacent vertices from the current vertex, we select only
-those that match the required property. The algorithm runs in $O(|E| + |V|)$ in
-the worst case.
+for [connected components](#connected-components). An important difference is
+that, instead of getting all adjacent vertices from the current vertex, we
+select only those that match the required property. The algorithm runs in
+$O(|E| + |V|)$ in the worst case.
 
 
 ```c
@@ -317,11 +318,11 @@ void flood_fill(graph_t *graph, int vertex, int new_value) {
 
 Even though we generalized the problem to use graphs, most flood fill
 applications use matrices to represent the data. We can easily adapt the
-algorithm above to use a [matrix](./representation.md#matrix) representation.
-Two points of the matrix, $p_1 = (x_1, y_1)$ and $p_2 = (x_2, y_2)$, are
-adjacent if $|x_1 - x_2| + |y_1 - y_2| \leq 1$. A simplified version of the
-flood fill algorithm using a matrix is presented below. It runs in $O(n·m)$ in
-the worst case, where $n$ and $m$ are the dimensions of the matrix.
+algorithm above to use [matrix](./representation.md#matrix) representation.  Two
+points of the matrix, $p_1 = (x_1, y_1)$ and $p_2 = (x_2, y_2)$, are adjacent if
+$|x_1 - x_2| + |y_1 - y_2| \leq 1$. A simplified version of the flood fill
+algorithm using a matrix is presented below. It runs in $O(n·m)$ in the worst
+case, where $n$ and $m$ are the dimensions of the matrix.
 
 ```c
 #define MAX_DIMENSION  1000
