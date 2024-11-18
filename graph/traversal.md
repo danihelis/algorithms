@@ -122,11 +122,11 @@ void visit_vertex(queue_t* queue, int vertex) {
 
 ## Topological Sort
 
-A topological sort lists the vertices of a [directed acyclic
-graph](./connection.md) in such a way that, if there is a sequence of edges from
-vertex $a$ to vertex $b$, then $a$ appears before $b$ in the list, $\forall a, b
-\in V$. (Since the graph is acyclic, if $a \leadsto b$, then $b \not\leadsto
-a$.)
+A topological sort lists the vertices of a
+[directed acyclic graph](./connection.md) in such a way that, if there is a
+sequence of edges from vertex $a$ to vertex $b$, then $a$ appears before $b$ in
+the list, $\forall a, b \in V$. (Since the graph is acyclic, if $a \leadsto b$,
+then $b \not\leadsto a$.)
 
 **Input** A directed acyclic graph $G=(V,E)$ \
 **Output** An ordered sequence $(v_1, \ldots, v_n)$ of $V$ such that

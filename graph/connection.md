@@ -26,8 +26,8 @@ containing $v$, that is, $\forall u \in V: v \leadsto u \leadsto v$. Two
 strongly connected components can have a connection between their vertices, but
 it cannot form a cycle. A DAG has no strongly connected components.
 
-In the following algorithms, we will use [adjacency lists](
-./representation.md#adjacency-list) to represent a graph.
+In the following algorithms, we will use
+[adjacency lists](./representation.md#adjacency-list) to represent a graph.
 
 ```c
 #define MAX_VERTICES  1000
@@ -52,9 +52,8 @@ components in $G$. A vertex $u \in V$ is part of a connected component $C(v)
 **Time** $O(|E| + |V|)$
 
 We simply run a [depth-first search](./traversal.md#depth-first-search)
-for each non-visited vertex of the graph.
-All vertices reached from a non-visited vertex $v$ are part of the component
-that contains $v$.
+for each non-visited vertex of the graph.  All vertices reached from a
+non-visited vertex $v$ are part of the component that contains $v$.
 
 ```c
 #define <string.h>
@@ -96,13 +95,13 @@ $G$.  A vertex $u \in V$ is part of a strongly connected component $C(v)
 of $G$ \
 **Time** $O(|E| + |V|)$
 
-We use an adapted version of [depth-first
-search](./traversal.md#depth-first-search) to traverse the graph and annotate
-the strongly connected components. The idea is similar to the previous approach:
-we start from a particular vertex $v$ and explore its connected vertices. If we
-find a back edge (an edge that connects an already visited vertex), we
-must be in a cycle, and these vertices must be part of a strongly connected
-component.
+We use an adapted version of
+[depth-first search](./traversal.md#depth-first-search) to traverse the graph
+and annotate the strongly connected components. The idea is similar to the
+previous approach: we start from a particular vertex $v$ and explore its
+connected vertices. If we find a back edge (an edge that connects an already
+visited vertex), we must be in a cycle, and these vertices must be part of a
+strongly connected component.
 
 To detect a back edge, we use two timestamps while traversing the graph.  The
 first, `visited`, marks the first time we visit a vertex. The second, `low`,
@@ -193,12 +192,12 @@ each of its connected components.
         bridges $B \subseteq E$ \
 **Time** $O(|E| + |V|)$
 
-We use a strategy similar to the previous one used to detect [strongly connected
-components](#strongly-connected-components).  We execute a [depth-first
-search](./traversal.md#depth-first-search), and annotate a timestamp (`visited`)
-that indicates the first time we visit a vertex, and the lowest timestamp
-(`low`) that can be reached by this vertex. These values are used to detect back
-edges.
+We use a strategy similar to the previous one used to detect
+[strongly connected components](#strongly-connected-components).  We execute a
+[depth-first search](./traversal.md#depth-first-search), and annotate a
+timestamp (`visited`) that indicates the first time we visit a vertex, and the
+lowest timestamp (`low`) that can be reached by this vertex. These values are
+used to detect back edges.
 
 To determine the articulation points in a graph,
 there are two cases to consider:

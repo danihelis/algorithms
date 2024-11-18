@@ -10,10 +10,10 @@ shortest path $p \in E^*$ is a sequence of edges such that $u
 \overset{p}{\leadsto} v$ and $\sum_{e \in p}{d(e)}$ is minimal.
 
 
-The algorithms below use [adjacency lists](./representation.md#adjacency-list) to
-represent the graph $G=(V, E)$. Each vertex $v \in V$ contains a list of edges
-$E(v) \subseteq E$ that connect it to another vertex $u \in V$. We will denote
-this set of connected vertices as $V(v) \subseteq V$.
+The algorithms below use [adjacency lists](./representation.md#adjacency-list)
+to represent the graph $G=(V, E)$. Each vertex $v \in V$ contains a list of
+edges $E(v) \subseteq E$ that connect it to another vertex $u \in V$. We will
+denote this set of connected vertices as $V(v) \subseteq V$.
 
 ```c
 #define MAX_VERTICES  1000
