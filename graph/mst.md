@@ -72,11 +72,11 @@ int compare_edges(const void *e1, const void *e2) {
 
 int find_set(graph_t *graph, int vertex) {
     if (graph->set[vertex] == vertex) return vertex;
-    graph->[vertex] = find_set(graph->set[vertex]);
+    graph->[vertex] = find_set(graph, graph->set[vertex]);
     return graph->set[vertex];
 }
 
-int set_union(graph_t *graph, int a, int b) {
+int join_sets(graph_t *graph, int a, int b) {
     a = find_set(graph, a);
     graph->set[a] = find_set(graph, b);
     return graph->set[a];
@@ -98,10 +98,10 @@ int mst(graph_t *graph, edge_t tree[]) {
     for (e = tree_size = total_distance = 0;
             tree_size < graph->num_vertices - 1 && e < num_edges; e++) {
         edge_t *edge = &edge_list[e];
-        u = find_set(edge->u);
-        v = find_set(edge->v);
+        u = find_set(graph, edge->u);
+        v = find_set(graph, edge->v);
         if (u != v) {
-            set_union(u, v);
+            join_sets(graph, u, v);
             tree[tree_size++] = *edge;
             total_distance = edge->distance;
         }
