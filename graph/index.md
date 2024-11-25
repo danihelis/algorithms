@@ -12,5 +12,6 @@ map with roads connecting cities, or a network with nodes connected by links.
 * [Graph representation](./representation.md): matrix and adjacency list
 * [Graph traversal](./traversal.md): DFS, BFS and topological sort
 * [Components](./connection.md): connected components, articulation points,
-  flood and fill
-* [Shortest paths](./path.md): Dijkstra's, Bellman-Ford's, Floyd-Marshall's
+  flood fill
+* [Shortest paths](./path.md): single path, all paths, negative distances
+* [Minimal spanning trees](./path.md): using disjoint sets or BFS

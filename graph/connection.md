@@ -31,11 +31,12 @@ In the following algorithms, we will use
 
 ```c
 #define MAX_VERTICES  1000
+#define MAX_EDGES     (MAX_VERTICES)  /* edges per vertex */
 
 typedef struct {
-    int edge[MAX_VERTICES][MAX_VERTICES];
+    int edge[MAX_VERTICES][MAX_EDGES];
     int num_edges[MAX_VERTICES];
-    int num_vertices[MAX_VERTICES];
+    int num_vertices;
     int component[MAX_VERTICES]; /* value from 0 to num_components-1 */
     int num_components;
 } graph_t;
@@ -225,7 +226,7 @@ typedef struct {
     int low[MAX_VERTICES];  /* lowest reachable timestamp */
     char processed[MAX_VERTICES];  /* either 0 or 1 */
     char articulation[MAX_VERTICES]; /* either 0 or 1 */
-    char bridge[MAX_VERTICES][MAX_VERTICES]; /* either 0 or 1 */
+    char bridge[MAX_VERTICES][MAX_EDGES]; /* either 0 or 1 */
 } graph_t;
 
 

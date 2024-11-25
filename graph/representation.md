@@ -65,10 +65,11 @@ graphs, where $|E| \approx |V|$.
 
 ```c
 #define MAX_VERTICES  1000
+#define MAX_EDGES     (MAX_VERTICES)  /* edges per vertex */
 
 typedef struct {
-    int edge[MAX_VERTICES][MAX_VERTICES];
-    double weight[MAX_VERTICES][MAX_VERTICES];
+    int edge[MAX_VERTICES][MAX_EDGES];
+    double weight[MAX_VERTICES][MAX_EDGES];
     int num_edges[MAX_VERTICES];
     int num_vertices;
 } graph_t;

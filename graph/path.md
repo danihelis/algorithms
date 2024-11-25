@@ -17,10 +17,11 @@ denote this set of connected vertices as $V(v) \subseteq V$.
 
 ```c
 #define MAX_VERTICES  1000
+#define MAX_EDGES     (MAX_VERTICES)  /* edges per vertex */
 
 typedef struct {
-    int edge[MAX_VERTICES][MAX_VERTICES];
-    int distance[MAX_VERTICES][MAX_VERTICES];  /* edge's distance */
+    int edge[MAX_VERTICES][MAX_EDGES];
+    int distance[MAX_VERTICES][MAX_EDGES];
     int num_edges[MAX_VERTICES];
     int num_vertices;
 } graph_t;
