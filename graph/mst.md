@@ -9,7 +9,7 @@ Consider a connected undirected graph $G=(V,E)$ with a distance function $d: E
 all its vertices such that, for each pair of vertices $u, v \in V$, there is a
 single path $p \in E^*$ that connects them, $u \overset{p}{\leadsto} v$. There
 are exactly $|V| - 1$ edges in the tree, since all vertices are connected.
-A minimum spanning tree is a spanning tree in which the sum of edge distances
+A minimal spanning tree is a spanning tree in which the sum of edge distances
 $\sum_{e\in E} d(e)$ is minimal.
 
 There are two different strategies to compute a minimal spanning tree for a
