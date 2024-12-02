@@ -4,11 +4,11 @@ order: 6
 
 # Network Flow
 
-Let $G=(V,E)$ be a directed graph representing a network flow, with
-vertices $s, t \in V$ denoting the source and the sink of $G$ respectively.
-The function $c: E \rightarrow \mathbb{N}$ denotes the flow capacity along
-the edge. We define a _flow_ along the edges as a function
-$f: E \rightarrow \mathbb{N}$ that respects the following constraints:
+Let $G=(V,E)$ be a directed graph representing a network flow, with vertices $s,
+t \in V$ denoting the source and the sink of $G$ respectively.  The function $c:
+E \rightarrow \mathbb{N}$ denotes the flow capacity along the edge. We define a
+_flow_ along the edges as a function $f: E \rightarrow \mathbb{N}$ that respects
+the following constraints:
 
 **Capacity constraint** $f(e) \leq c(e), \forall e \in E$, that is, the flow
 along an edge cannot be higher than its capacity.
@@ -55,7 +55,6 @@ new augmenting path will be longer than the previous one (that is, it will have
 at least one more vertex in the path). Summing up, the algorithm can find
 in the worst case up to $|E|·|V|$ augmenting paths. Since each breath-first
 search runs in $O(|E|)$, Edmond-Karp's algorithm runs in $O(|V|\cdot |E|^2)$.
-
 
 The algorithm below use
 [adjacency lists](./representation.md#adjacency-list) to represent a graph,
