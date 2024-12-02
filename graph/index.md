@@ -15,4 +15,4 @@ map with roads connecting cities, or a network with nodes connected by links.
   flood fill
 * [Shortest paths](./path.md): single path, all paths, negative distances
 * [Minimal spanning trees](./path.md): using disjoint sets or BFS
-* [Network flow](./flow.md): maximum flow
+* [Network flow](./maxflow.md): maximum flow
